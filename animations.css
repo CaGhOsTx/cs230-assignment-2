@@ -1,0 +1,12 @@
+@keyframes buttonHover {
+    0% {
+        transform: translateY(0);
+        color:whitesmoke;
+        background-color: rgb(26, 117, 209);
+    }
+    100% {
+        color: black;
+        background-color: yellow;
+        transform: translateY(-5px);
+    }
+}

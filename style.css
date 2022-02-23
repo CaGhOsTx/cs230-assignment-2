@@ -1,0 +1,61 @@
+@import url(global-settings.css);
+@import url(animations.css);
+
+.pane {
+    position: relative;
+    display: grid;
+    text-align: center;
+    border-radius: var(--gl-paneRadius);
+}
+
+body {
+    background-color: #1b2533;
+    display: grid;
+    height: calc(100vh - var(--gl-margin) * 2);
+    margin: var(--gl-margin);
+    grid-gap: var(--gl-gridGap);
+    grid-template-columns: 1fr 4fr;
+}
+.animation {
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+    gap: var(--gl-gridGap);
+}
+.pHeader {
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(26, 117, 209);
+    height: 100%;
+    border-radius: var(--btn-radius);
+}
+.control {
+    color: white;
+    background-color: var(--cont-clr);
+}
+
+.execution {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: var(--gl-gridGap);
+    align-items: center;
+}
+
+
+.button:hover {
+    animation: buttonHover 0.2s ease-in-out normal;
+    color: black;
+    background-color: yellow;
+    transform: translateY(-5px);
+}
+
+.svg {
+    color: whitesmoke;
+    border: 4mm solid whitesmoke;
+}
