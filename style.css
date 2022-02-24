@@ -2,13 +2,13 @@
 @import url(animations.css);
 
 .pane {
-    position: relative;
     display: grid;
     text-align: center;
     border-radius: var(--gl-paneRadius);
 }
 
 body {
+    position: relative;
     background-color: #1b2533;
     display: grid;
     height: calc(100vh - var(--gl-margin) * 2);
@@ -22,16 +22,16 @@ body {
     gap: var(--gl-gridGap);
 }
 .pHeader {
-    margin-bottom: 5vh;
     margin-top: 2vh;
 }
-
 .button {
-    display: inline-flex;
+    display: grid;
     align-items: center;
     font-size: 20px;
     background-color: rgb(26, 117, 209);
     height: 100%;
+    width: 100%;
+    text-align: center;
     border-radius: var(--btn-radius);
 }
 .control {
@@ -40,7 +40,6 @@ body {
 }
 
 .execution {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     color: white;
     gap: var(--gl-gridGap);
@@ -52,10 +51,15 @@ body {
     animation: buttonHover 0.2s ease-in-out normal;
     color: black;
     background-color: yellow;
-    transform: translateY(-5px);
 }
-
 .svg {
+    padding: 5%;
+    overflow: hidden;
+    display: flow-root;
+    align-items: center;
     color: whitesmoke;
     border: 4mm solid whitesmoke;
+}
+img {
+    height: 100%;
 }
