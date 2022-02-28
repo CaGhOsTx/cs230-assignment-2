@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+<!-- linker css header insert -->
+        <link rel="stylesheet" href="styles/index/header.css"/>
         <title>SVG Animator</title>
-        <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
     </head>
     <body>
         <div class="animation pane">
             <div class="control pane">
                 <span class="pHeader">CONTROLS</span>
- 
+                <p>select animation: </p>
+                <div class="dropdown">
+                    <span>TRANSLATE</span>
+                    <span>ROTATE</span>
+                    <span>SKEW</span>
+                    <span>COLOR</span>
+                    <span>STROKE</span>
+                    <span>SCALE</span>
+                </div>
             </div>
             <div class="execution pane">
                 <div class="button">ANIMATE</div>
@@ -18,7 +27,7 @@
             </div>
         </div>
         <div class="svg pane">
-            <img src="ghost.svg" alt="SVG"/>
+            <img id="svg" src="ghost.svg" alt="SVG"/>
         </div>
     </body>
 </html>

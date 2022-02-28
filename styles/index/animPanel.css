@@ -1,0 +1,4 @@
+.animation {
+    grid-template-rows: 9fr 1fr;
+    gap: var(--gl-gridGap);
+}

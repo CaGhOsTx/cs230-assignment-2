@@ -1,0 +1,21 @@
+.svg {
+    position: relative;
+    align-items: center;
+    color: whitesmoke;
+    overflow: hidden;
+    border: 4mm solid whitesmoke;
+    background-size: 10mm 10mm;
+    background-image: 
+        linear-gradient(to right, rgba(245,245,245,0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245,245,245,0.2) 1px, transparent 1px);
+
+}
+img {
+    margin: auto;
+    width: 50%;
+    height: 80%;
+}
+
+.selected {
+    border: 2px solid cyan;
+}

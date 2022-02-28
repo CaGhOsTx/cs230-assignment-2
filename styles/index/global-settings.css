@@ -11,4 +11,6 @@
     font-size: 1.25em;
     /* COLORS */
     --cont-clr: #ff652f;
+    --exec-btn-clr: rgb(26, 117, 209);
+    --body-clr: #1b2533;
 }
