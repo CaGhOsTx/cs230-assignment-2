@@ -1,3 +1,5 @@
+//Before I figured out enums exist in javascript....
+
 class Menu {
     constructor(name, html) {
         this.html = html;
@@ -9,58 +11,94 @@ export const translateM = new Menu( 'translateM',
     `
     <div class="sep">
         <label for="tX">X</label>
-        <input type="text" id="tX"></input>
+        <input type="number" id="tX"/>
+        <span class="unit">px</span>
     </div>
     <div class="sep">
         <label for="tY">Y</label>
-        <input type="text" id="tY"></input>
+        <input type="number" id="tY"/>
+        <span class="unit">px</span>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
     `);
 export const rotateM = new Menu('rotateM',
     `
     <div class="sep">
-        <label for="rot">&angle;&#8728;</label>
-        <input type="text" id="rot"></input>
+        <label for="rot">angle</label>
+        <input type="number" id="rot"/>
+        <span class="unit">deg</span>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
     `);
 export const skewM = new Menu('skewM', 
 `
     <div class="sep">
-        <label for="sFrom">&angle;&#8728;X</label>
-        <input type="text" id="sFrom"></input>
+        <label for="sX">angleX</label>
+        <input type="number" id="sFrom"/>
+        <span class="unit">deg</span>
     </div>
     <div class="sep">
-        <label for="sTo">&angle;&#8728;Y</label>
-        <input type="text" id="sTo"></input>
+        <label for="sY">angleY</label>
+        <input type="number" id="sTo"/>
+        <span class="unit">deg</span>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
 `);
 export const colorM = new Menu('colorM',
     `
     <div class="sep">
-        <label for="cFrom">starting color</label>
-        <input type="color" id="cFrom"></input>
+        <label for="cFrom" value="red">starting color</label>
+        <input type="color" id="cFrom"/>
     </div>
     <div class="sep">
-        <label for="cTo">final color</label>
-        <input type="color" id="cTo"></input>
+        <label for="cTo" value="cyan">final color</label>
+        <input type="color" id="cTo"/>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
     `);
 export const strokeM = new Menu('strokeM',
     `
     <div class="sep">
         <label for="sWidth">stroke width</label>
-        <input type="text" id="sWidth"></input>
+        <input type="number" id="sWidth"/>
+        <span class="unit">px</span>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
     `);
 export const scaleM = new Menu('scaleM',
 `
     <div class="sep">
-        <label for="sFrom">scale from</label>
-        <input type="text" id="sFrom"></input>
+        <label for="sX">scale X</label>
+        <input type="number" id="sX"/>
     </div>
     <div class="sep">
-        <label for="sTo">scale to</label>
-        <input type="text" id="sTo"></input>
+        <label for="sY">scale Y</label>
+        <input type="number" id="sY"/>
+    </div>
+    <div class="sep">
+        <label for="dur">duration</label>
+        <input type="number" id="dur"/>
+        <span class="tUnit">s</span>
     </div>
 `);
 const values = [translateM, rotateM, skewM, colorM, strokeM, scaleM]

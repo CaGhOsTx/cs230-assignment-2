@@ -8,7 +8,6 @@ export default class SVGElement {
     };
 
     onmousedown = (e, pane) => {
-        console.log("in inner");
         pane && Array.from(pane.ELEMENT.children)
             .filter(n => n.classList.contains("selected"))
             .forEach(n => n.classList.replace("selected", "unselected"));
@@ -27,5 +26,5 @@ export default class SVGElement {
     };
     getX = () => this.ELEMENT.style.left;
     getY = () => this.ELEMENT.style.top;
-    coordinates = () => this.getX() + ", " + this.getY();
+    getCoordinates = () => this.getX() + ", " + this.getY();
 }

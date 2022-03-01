@@ -10,7 +10,9 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.25em;
     /* COLORS */
-    --cont-clr: #ff652f;
+    --cont-clr:#43aa8b;
     --exec-btn-clr: rgb(26, 117, 209);
     --body-clr: #1b2533;
+    --anim-mn-clr: #851e3e;
+    --gl-txt-clr: whitesmoke;
 }

@@ -1,6 +1,5 @@
 "use strict";
-import { Arrow } from "./geometry.js";
-import { svgPanel } from "./script.js";
+import { Arrow } from "./Geometry.js";
 
 export var scale = 1;
 
@@ -17,7 +16,10 @@ export default class Container {
             else if (scale > 0.2)
                 scale -= 0.1;
             this.elements.forEach(e => e.ELEMENT.setAttribute("style", `transform: scale(${scale})`));
-            this.ELEMENT.setAttribute("style", "background-size: " + 5 * scale + "mm " + 5 * scale + "mm");
+            if(scale < 0.5)
+                this.ELEMENT.setAttribute("style", "background-size: 0");
+            else 
+                this.ELEMENT.setAttribute("style", "background-size: " + 5 * scale + "mm " + 5 * scale + "mm");
             this.arrow.updateArrow(0,0,0,0,this);
             console.log("updated" + this.arrow.printArrow())
             this.arrow.ELEMENT.setAttribute("style", `border-top:${scale * 5}px dashed cyan;`)

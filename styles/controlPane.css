@@ -1,0 +1,31 @@
+#control {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: var(--gl-gridGap);
+    align-items: center;
+}
+
+#translate {
+    animation: blink 2s ease-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        background-color: var(--cont-clr);
+    }
+    89% {
+        background-color: var(--cont-clr);
+    }
+    90% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: var(--cont-clr);
+    }
+}
+
+#control > .button {
+    background-color: var(--cont-clr);
+}

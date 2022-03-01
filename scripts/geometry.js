@@ -9,10 +9,11 @@ export class Arrow {
     }
 
     updateArrow = (x,y,x2,y2, panel) => {
+        let tx = document.getElementById("tX");
+        let ty = document.getElementById("tY");
         let offsets = panel.ELEMENT.getBoundingClientRect();
         this.updatePoints(x, y, x2, y2);
         let angle = Math.atan(((this.y2 - this.y)/(this.x2 - this.x)));
-        angle -= this.x2 < this.x ? Math.PI : 0;
         this.ELEMENT.setAttribute("style", 
             `
             left: ${this.x - offsets.x}px;
@@ -20,11 +21,18 @@ export class Arrow {
             width:${this.getDistance()}px;
             border-top:${scale * 5}px dashed cyan;
             transform:
+                ${this.mirrorIfLeftOfYAxis()}
                 rotate(${angle}rad)
             `
         );
+        if(tx) tx.value = this.x2 - this.x;
+        if(ty) ty.value = this.y2 - this.y;
         this.ELEMENT.innerText = Math.round(this.getDistance()) + "px";
     };
+
+    mirrorIfLeftOfYAxis() {
+        return this.x2 < this.x ? `translate(${(this.x2 - this.x)}px,${(this.y2 - this.y)}px)` : '';
+    }
 
     updatePoints(x, y, x2, y2) {
         this.x = parseInt(x) || this.x;

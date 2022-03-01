@@ -1,0 +1,35 @@
+.execution {
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: var(--gl-gridGap);
+    align-items: center;
+}
+
+.button {
+    display: grid;
+    align-items: center;
+    font-size: 0.4em;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: var(--btn-radius);
+    transform: scale(1,1);
+}
+
+.execution > .button {
+    background-color: var(--exec-btn-clr);
+}
+
+.button:hover {
+    animation: scale 0.2s;
+    transform: scale(1.2,1.2);
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1,1);
+    }    
+    to {
+        transform: scale(1.2,1.2);
+    }
+}

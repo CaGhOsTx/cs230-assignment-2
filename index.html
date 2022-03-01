@@ -2,34 +2,31 @@
 <html>
     <head>
 <!-- linker css header insert -->
-        <link rel="stylesheet" href="styles/menus/svg/index/header.css"/>
+        <link rel="stylesheet" href="styles/index/header.css"/>
         <title>SVG Animator</title>
-        <script type="module" src="scripts/script.js" defer></script>
+        <script type="module" src="scripts/Main.js" defer></script>
     </head>
     <body>
         <div class="animation pane">
             <div id="control" class="pane">
-                <label for="animD">select animation:</label>
-                <div id="animD" class="dropdown">
-                    <span id="translate">TRANSLATE</span>
-                    <span id="rotate">ROTATE</span>
-                    <span id="skew">SKEW</span>
-                    <span id="color">COLOR</span>
-                    <span id="stroke">STROKE</span>
-                    <span id="scale">SCALE</span>
-                </div>
-                <div id="animMenu">
-                    <!--js-->
-                </div>
+                <span id="translate" class="button">TRANSLATE</span>
+                <span id="rotate" class="button">ROTATE</span>
+                <span id="skew" class="button">SKEW</span>
+                <span id="color" class="button">COLOR</span>
+                <span id="stroke" class="button">STROKE</span>
+                <span id="scale" class="button">SCALE</span>
+            </div>
+            <div id="animMenu">&nbsp;
+                <!--js-->
             </div>
             <div class="execution pane">
-                <div class="button">ANIMATE</div>
+                <div id="animate" class="button">ANIMATE</div>
                 <div class="button">SVG/<br/>SOURCE</div>
                 <div class=" button">DOWNLOAD</div>
             </div>
         </div>
         <div class="svg pane">
-            <img id="svg" src="ghost.svg" alt="SVG"/>
+            <img id="svg" src="ghost.svg"/>
         </div>
     </body>
 </html>

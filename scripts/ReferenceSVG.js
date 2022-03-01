@@ -1,6 +1,6 @@
-import {svg} from "./SVG.js";
+import {svg} from "./MainSVG.js";
 import SVGElement from "./SVGElement.js";
-import { svgPanel } from "./script.js";
+import { svgPanel } from "./Main.js";
 export const aux = new SVGElement(() => {
     let node = svg.ELEMENT.cloneNode(true);
     node.setAttribute("id", "aux");
