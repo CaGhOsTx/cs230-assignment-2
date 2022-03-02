@@ -1,7 +1,7 @@
 import SVGElement from "./SVGElement.js"
 import {svgPanel} from "./Main.js"
 export const svg = new SVGElement(() => {
-    let res = document.getElementById("svg");
+    let res = document.getElementsByClassName("ELEMENT")[0];
     return res
 });
 

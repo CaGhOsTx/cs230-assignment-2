@@ -31,10 +31,90 @@ window.onkeydown = (key) => {
 }
 
 window.onmousedown = () => {
-    Array.from(document.body.getElementsByTagName("img"))
+    Array.from(document.body.getElementsByClassName("ELEMENT"))
         .filter(n => n.classList.contains("selected"))
         .forEach(n => n.classList.replace("selected", "unselected"));
 }
 document.getElementById("animate").onclick = (e) => {
-    
+    switch(uiController.currentAnimation) {
+        case "translate" :
+            console.log("animating translate")
+            document.getElementById("ghost").innerHTML = 
+            `
+            <animateTransform attributeName="transform"
+                transformOrigin="50% 50%";
+                attributeType="XML"
+                type="translate"
+                from="${svg.getX() / 2} ${svg.getY() / 2}"
+                to="${document.getElementById('tX').value + " " + document.getElementById('tY').value}"
+                dur="${document.getElementById('dur').value}s"
+                repeatCount="indefinite"
+            />
+            `
+            break;
+        case "rotate" :
+            console.log("animating rotate")
+            document.getElementById("ghost").innerHTML = 
+            `
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0"
+            to="${document.getElementById('rot').value}"
+            dur="${document.getElementById('dur').value}s"
+            repeatCount="indefinite"
+            />
+            `
+            break;
+        case "skew" :
+            console.log("animating skew")
+            document.getElementById("ghost").innerHTML = 
+            `
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="skewX"
+            from="0"
+            to="${document.getElementById('sX').value}"
+            dur="${document.getElementById('dur').value}s"
+            repeatCount="indefinite"
+            />
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="skewY"
+            from="0"
+            to="${document.getElementById('sY').value}"
+            dur="${document.getElementById('dur').value}s"
+            repeatCount="indefinite"
+            />
+            `
+            break;
+        case "color" :
+            console.log("animating color")
+            document.getElementById("ghost").innerHTML = 
+            `
+            `
+            break;
+        case "stroke" :
+            console.log("animating stroke")
+            document.getElementById("ghost").innerHTML = 
+            `
+            `
+            break;
+        case "scale" :
+            console.log("animating scale")
+            document.getElementById("ghost").innerHTML = 
+            `
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="scale"
+            from="0 0"
+            to="${document.getElementById('sX').value + " " + document.getElementById('sY').value}"
+            dur="${document.getElementById('dur').value}s"
+            repeatCount="indefinite"
+            />
+            `
+            break;
+        default:
+    }
+    console.log(document.getElementById("ghost").innerHTML)
 }

@@ -24,7 +24,7 @@ export default class SVGElement {
             e.stopPropagation();
         }
     };
-    getX = () => this.ELEMENT.style.left;
-    getY = () => this.ELEMENT.style.top;
-    getCoordinates = () => this.getX() + ", " + this.getY();
+    getX = () => parseInt(this.ELEMENT.style.left);
+    getY = () => parseInt(this.ELEMENT.style.top);
+    getCoordinates = () => this.getX() + " " + this.getY();
 }
