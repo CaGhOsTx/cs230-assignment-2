@@ -1,4 +1,6 @@
 "use strict";
+import { scale } from "./Container.js";
+
 export default class SVGElement {
     constructor(ELEMENT) {
         this.ELEMENT = ELEMENT();

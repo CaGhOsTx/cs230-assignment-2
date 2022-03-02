@@ -42,11 +42,10 @@ document.getElementById("animate").onclick = (e) => {
             document.getElementById("ghost").innerHTML = 
             `
             <animateTransform attributeName="transform"
-                transformOrigin="50% 50%";
                 attributeType="XML"
                 type="translate"
-                from="${svg.getX() / 2} ${svg.getY() / 2}"
-                to="${document.getElementById('tX').value + " " + document.getElementById('tY').value}"
+                from="0 0"
+                to="${document.getElementById('tX').value} ${document.getElementById('tY').value}"
                 dur="${document.getElementById('dur').value}s"
                 repeatCount="indefinite"
             />
@@ -59,7 +58,7 @@ document.getElementById("animate").onclick = (e) => {
             <animateTransform attributeName="transform"
             attributeType="XML"
             type="rotate"
-            from="0"
+            
             to="${document.getElementById('rot').value}"
             dur="${document.getElementById('dur').value}s"
             repeatCount="indefinite"
@@ -92,6 +91,11 @@ document.getElementById("animate").onclick = (e) => {
             console.log("animating color")
             document.getElementById("ghost").innerHTML = 
             `
+                <animate attributeName="fill" 
+                values="${document.getElementById("cFrom").value};${document.getElementById("cTo").value};${document.getElementById("cFrom").value};" 
+                dur="${document.getElementById('dur').value}s" 
+                
+                repeatCount="indefinite"/>
             `
             break;
         case "stroke" :

@@ -42,12 +42,12 @@ export const skewM = new Menu('skewM',
 `
     <div class="sep">
         <label for="sX">angleX</label>
-        <input type="number" id="sFrom"/>
+        <input type="number" id="sX"/>
         <span class="unit">deg</span>
     </div>
     <div class="sep">
         <label for="sY">angleY</label>
-        <input type="number" id="sTo"/>
+        <input type="number" id="sY"/>
         <span class="unit">deg</span>
     </div>
     <div class="sep">
