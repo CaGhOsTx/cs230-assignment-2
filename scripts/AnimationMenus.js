@@ -46,7 +46,12 @@ export const rotateM = new Menu('rotateM',
         <input type="number" id="dur"/>
         <span class="tUnit">s</span>
     </div>
-    `).withAnimation(() => `from {transform: rotate(0);}to {transform: rotate(${document.getElementById("rot").value}deg); }`);
+    `).withAnimation(() => `from {
+        transform-origin: center;
+        transform: rotate(0);}to {
+            transform-origin: center;
+            transform: rotate(${document.getElementById("rot").value}deg); }`
+            );
 export const skewM = new Menu('skewM', 
     `
     <div class="sep">

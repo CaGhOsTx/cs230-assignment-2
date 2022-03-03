@@ -30,6 +30,9 @@ window.onkeydown = (key) => {
     if(key.code === "Escape") {
         removeHelperTools();
     }
+    else if(key.code === "Enter") {
+        document.getElementById("animate").click();
+    }
 }
 // global function to unselect any previously selected element if the user clicks outside of it
 // toggles between selected and unselected CSS styles
@@ -86,6 +89,7 @@ function setFixedScalingFactorToSVG() {
     sheet.innerHTML = `.ELEMENT {width: ${wt}; height:${ht}}`;
     document.body.appendChild(sheet);
 }
+
 /*
   alert(`disclaimer! I really didnt have enough time to make this much better, but the idea behind it interest me quite a lot! 
   I will definitelly add more features to this in the future. 
