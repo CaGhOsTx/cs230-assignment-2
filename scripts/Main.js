@@ -75,6 +75,7 @@ const download = () => {
   }
 
 
+
 //explained line 10
 function setFixedScalingFactorToSVG() {
     let ghost = document.getElementsByTagName("svg")[0];
@@ -86,9 +87,3 @@ function setFixedScalingFactorToSVG() {
     sheet.innerHTML = `.ELEMENT {width: ${wt}; height:${ht}}`;
     document.body.appendChild(sheet);
 }
-/*
-  alert(`disclaimer! I really didnt have enough time to make this much better, but the idea behind it interest me quite a lot! 
-  I will definitelly add more features to this in the future. 
-    More user selectable animation options,
-    Animation chaining, 
-    a temporal displacement ui component as well to offset animations in time would be nice too.`);*/
