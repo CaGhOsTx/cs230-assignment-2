@@ -1,0 +1,20 @@
+graph exercise2 {
+    abstract start node S()
+    abstract final node q1()
+    abstract final node r1()
+    abstract node q2()
+    abstract node r2()
+
+    edge e1 {s -> q1 as "a"}
+    edge e2 { s -> r1 as "b"}
+    edge e3 {q1 -> q1 as "a"}
+    edge e4 {q1 -> q2 as "b"}
+    edge e5 {q2 -> q1 as "a"}
+    edge e6 {q2 -> q2 as "b"}
+    edge e7 {r1 -> r2 as "a"}
+    edge e8 {r1 -> r1 as "b"}
+    edge e9 {r2 -> r2 as "a"}
+    edge e10 {r2 -> r1 as "b"}
+
+    
+}
