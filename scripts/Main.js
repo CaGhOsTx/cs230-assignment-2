@@ -69,8 +69,8 @@ document.getElementById("download").onclick = () => download();
 
 const download = () => {
     var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent("<put the code of your svg here>"));
-    element.setAttribute('download', "<name of file>");
+    element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent("<style>body{background-color:black;width=100%;height100%;overflow:hidden} body > * {width: 50%; height: 50%};</style>" + document.getElementsByClassName("ELEMENT")[0].innerHTML));
+    element.setAttribute('download', "ghost with " + uiController.currentAnimation);
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
