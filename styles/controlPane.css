@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#translate {
+.blinking {
     animation: blink 2s ease-out infinite;
 }
 

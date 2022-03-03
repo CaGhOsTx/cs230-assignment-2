@@ -5,28 +5,25 @@ import {aux} from "./ReferenceSVG.js";
 import * as uiOptions from "./AnimationMenus.js";
 import AnimationUIController from "./AnimationUIController.js";
 
-
 export const svgPanel = new Container();
 
 const uiController = new AnimationUIController(
     Array.from(document.getElementById("control").children), 
-    uiOptions, document.getElementById("animMenu"));
+    uiOptions, document.getElementById("animMenu"), 
+    document.getElementById("animate"));
 
 svgPanel.addAll([svg,aux])
-
 const translate = document.getElementById("translate");
 
 translate.onmousedown = () => {
     console.log("clicked on translate")
     uiController.inject(translate);
-    svgPanel.ELEMENT.appendChild(aux.ELEMENT);
-    svgPanel.ELEMENT.appendChild(svgPanel.getArrow().ELEMENT)
+    addTranslateHelperTools();
 }
 
 window.onkeydown = (key) => {
     if(key.code === "Escape") {
-        svgPanel.ELEMENT.removeChild(aux.ELEMENT);
-        svgPanel.ELEMENT.removeChild(svgPanel.getArrow().ELEMENT);
+        removeHelperTools();
     }
 }
 
@@ -35,90 +32,59 @@ window.onmousedown = () => {
         .filter(n => n.classList.contains("selected"))
         .forEach(n => n.classList.replace("selected", "unselected"));
 }
-document.getElementById("animate").onclick = (e) => {
-    switch(uiController.currentAnimation) {
-        case "translate" :
-            console.log("animating translate")
-            document.getElementById("ghost").innerHTML = 
-            `
-            <animateTransform attributeName="transform"
-                attributeType="XML"
-                type="translate"
-                from="0 0"
-                to="${document.getElementById('tX').value} ${document.getElementById('tY').value}"
-                dur="${document.getElementById('dur').value}s"
-                repeatCount="indefinite"
-            />
-            `
-            break;
-        case "rotate" :
-            console.log("animating rotate")
-            document.getElementById("ghost").innerHTML = 
-            `
-            <animateTransform attributeName="transform"
-            attributeType="XML"
-            type="rotate"
-            
-            to="${document.getElementById('rot').value}"
-            dur="${document.getElementById('dur').value}s"
-            repeatCount="indefinite"
-            />
-            `
-            break;
-        case "skew" :
-            console.log("animating skew")
-            document.getElementById("ghost").innerHTML = 
-            `
-            <animateTransform attributeName="transform"
-            attributeType="XML"
-            type="skewX"
-            from="0"
-            to="${document.getElementById('sX').value}"
-            dur="${document.getElementById('dur').value}s"
-            repeatCount="indefinite"
-            />
-            <animateTransform attributeName="transform"
-            attributeType="XML"
-            type="skewY"
-            from="0"
-            to="${document.getElementById('sY').value}"
-            dur="${document.getElementById('dur').value}s"
-            repeatCount="indefinite"
-            />
-            `
-            break;
-        case "color" :
-            console.log("animating color")
-            document.getElementById("ghost").innerHTML = 
-            `
-                <animate attributeName="fill" 
-                values="${document.getElementById("cFrom").value};${document.getElementById("cTo").value};${document.getElementById("cFrom").value};" 
-                dur="${document.getElementById('dur').value}s" 
-                
-                repeatCount="indefinite"/>
-            `
-            break;
-        case "stroke" :
-            console.log("animating stroke")
-            document.getElementById("ghost").innerHTML = 
-            `
-            `
-            break;
-        case "scale" :
-            console.log("animating scale")
-            document.getElementById("ghost").innerHTML = 
-            `
-            <animateTransform attributeName="transform"
-            attributeType="XML"
-            type="scale"
-            from="0 0"
-            to="${document.getElementById('sX').value + " " + document.getElementById('sY').value}"
-            dur="${document.getElementById('dur').value}s"
-            repeatCount="indefinite"
-            />
-            `
-            break;
-        default:
-    }
-    console.log(document.getElementById("ghost").innerHTML)
+
+
+function addTranslateHelperTools() {
+    svgPanel.ELEMENT.appendChild(aux.ELEMENT);
+    svgPanel.ELEMENT.appendChild(svgPanel.getArrow().ELEMENT);
 }
+
+export function removeHelperTools () {
+    if(svgPanel.ELEMENT.querySelector("#aux"))
+        svgPanel.ELEMENT.removeChild(aux.ELEMENT);
+    if(svgPanel.ELEMENT.querySelector("#arrow"))
+        svgPanel.ELEMENT.removeChild(svgPanel.getArrow().ELEMENT);
+}
+
+let text = document.getElementById("text");
+let toggle = true;
+document.getElementById("code").onclick = () => {
+    text.innerText = toggle?  svg.ELEMENT.innerHTML : "";
+    svgPanel.ELEMENT.classList.toggle("asText");
+    toggle = !toggle;
+}
+
+document.getElementById("download").onclick = () => download();
+
+const download = () => {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent("<put the code of your svg here>"));
+    element.setAttribute('download', "<name of file>");
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  alert(`disclaimer! I really didnt have enough time to make this much better, but the idea behind it interest me quite a lot! 
+  I will definitelly add more features to this in the future. 
+    More user selectable animation options,
+    Animation chaining, 
+    a temporal displacement ui component as well to offset animations in time would be nice too.`);

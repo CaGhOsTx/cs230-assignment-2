@@ -1,12 +1,12 @@
 import {svg} from "./MainSVG.js";
 import SVGElement from "./SVGElement.js";
 import { svgPanel } from "./Main.js";
-export const aux = new SVGElement(() => {
+export let aux = new SVGElement(() => {
     let node = svg.ELEMENT.cloneNode(true);
-    node.setAttribute("id", "aux");
+    node.id = "aux";
+    node.innerHTML = node.innerHTML.replaceAll(/ghost/ig, "a")
     return node;
 });
-
 
 aux.ELEMENT.onmousedown = (e) => {
     let arrow = svgPanel.getArrow();
